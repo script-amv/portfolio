@@ -1,4 +1,6 @@
 import Section from "./Section";
+import githubIcon from "./assets/icons/GitHub_Invertocat_Black_Clearspace.svg";
+import linkedinIcon from "./assets/icons/InBug-Black.png";
 
 function App() {
   return (
@@ -6,7 +8,17 @@ function App() {
       <Section
         title="Hello, I'm Dmitrii — Web Developer."
         description="Based in Tokyo and available for new opportunities, I build thoughtful, reliable web applications across both frontend and backend. Explore my projects and experience, or get in touch to discuss an opportunity."
-      />
+      >
+        <div className="mt-4 flex gap-4 opacity-80">
+          <a href="https://github.com/script-amv">
+            <img className="h-5 w-5" src={githubIcon} />
+          </a>
+
+          <a href="https://www.linkedin.com/in/script-amv">
+            <img className="h-5 w-5" src={linkedinIcon} />
+          </a>
+        </div>
+      </Section>
 
       <Section
         title="Technologies I use, tools I trust, and qualifications I've earned."
