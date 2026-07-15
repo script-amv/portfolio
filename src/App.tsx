@@ -2,7 +2,7 @@ import Section from "./Section";
 
 function App() {
   return (
-    <main>
+    <main className="mx-auto max-w-7xl border-x border-zinc-200 bg-white px-24">
       <Section
         title="Hello, I'm Dmitrii — Web Developer."
         description="Based in Tokyo and available for new opportunities, I build thoughtful, reliable web applications across both frontend and backend. Explore my projects and experience, or get in touch to discuss an opportunity."

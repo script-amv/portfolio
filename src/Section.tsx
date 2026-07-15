@@ -5,9 +5,9 @@ type SectionProps = {
 
 function Section({title, description}: SectionProps) {
   return (
-    <section>
-      <h2>{title}</h2>
-      <p>{description}</p>
+    <section className="max-w-2xl">
+      <h2 className="text-5xl/tight font-semibold">{title}</h2>
+      <p className="mt-4 text-lg text-zinc-600">{description}</p>
     </section>
   );
 }
