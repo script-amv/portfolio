@@ -1,6 +1,6 @@
 import Section from "./Section";
-import githubIcon from "./assets/icons/GitHub_Invertocat_Black_Clearspace.svg";
-import linkedinIcon from "./assets/icons/InBug-Black.png";
+import githubIcon from "./assets/icons/github.svg";
+import linkedinIcon from "./assets/icons/linkedin.png";
 
 function App() {
   return (
