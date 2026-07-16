@@ -98,16 +98,23 @@ function App() {
         title="Technologies I use, tools I trust, and qualifications I've earned."
         description="I work across frontend and backend development to build fast, accessible, and reliable web experiences. Here's a focused overview of the technologies I reach for, the tools that support my workflow, and the qualifications that have shaped my professional development."
       >
-        <div>
+        <div className="mt-16 grid grid-cols-2 gap-8">
           {skillGroups.map((group) => (
-            <section key={group.title}>
-              <h3>{group.title}</h3>
-              <p>{group.description}</p>
+            <section
+              className="grid grid-cols-[8rem_minmax(0,1fr)] gap-4"
+              key={group.title}
+            >
+              <h3 className="font-semibold">{group.title}</h3>
+              <p className="text-zinc-600">{group.description}</p>
 
               {group.skills.length > 0 && (
-                <ul>
+                <ul className="col-start-2 flex flex-wrap gap-2">
                   {group.skills.map((skill) => (
-                    <li key={skill}>{skill}</li>
+                    <li
+                      className="rounded-md border border-zinc-200 p-1 text-xs text-zinc-600"
+                    >
+                      {skill}
+                    </li>
                   ))}
                 </ul>
               )}
