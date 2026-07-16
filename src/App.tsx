@@ -3,6 +3,66 @@ import githubIcon from "./assets/icons/github.svg";
 import linkedinIcon from "./assets/icons/linkedin.png";
 import portrait from "./assets/portrait.png";
 
+const skillGroups = [
+  {
+    title: "Frontend",
+    description:
+      "Accessible, responsive, and performance-focused interfaces built with:",
+    skills: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "TanStack Query",
+      "Zustand",
+      "Vite",
+      "Vitest",
+      "Playwright",
+    ],
+  },
+  {
+    title: "Backend Engineering",
+    description:
+      "Reliable APIs and data-driven applications using:",
+    skills: [
+      "Node.js",
+      "NestJS",
+      "Express",
+      "PostgreSQL",
+      "Prisma",
+      "Redis",
+      "REST",
+      "GraphQL",
+      "Docker",
+    ],
+  },
+  {
+    title: "Design & Delivery",
+    description:
+      "Product design, development workflows, deployment, and measurement with:",
+    skills: [
+      "Figma",
+      "Adobe Photoshop",
+      "GitHub",
+      "CI/CD",
+      "Vercel",
+      "Postman",
+      "Google Analytics",
+    ],
+  },
+  {
+    title: "Education & Credentials",
+    description:
+      "My educational background and professional certifications:",
+    skills: [
+      "BSc Computer Science — 2026",
+      "JLPT N1",
+      "EIKEN Grade 1",
+      "Google Advanced Data Analytics Professional Certificate",
+    ],
+  },
+];
+
 function App() {
   return (
     <main className="mx-auto max-w-7xl border-x border-zinc-200 bg-white px-24 flex flex-col gap-[40vh] py-[40vh]">
@@ -37,7 +97,24 @@ function App() {
       <Section
         title="Technologies I use, tools I trust, and qualifications I've earned."
         description="I work across frontend and backend development to build fast, accessible, and reliable web experiences. Here's a focused overview of the technologies I reach for, the tools that support my workflow, and the qualifications that have shaped my professional development."
-      />
+      >
+        <div>
+          {skillGroups.map((group) => (
+            <section key={group.title}>
+              <h3>{group.title}</h3>
+              <p>{group.description}</p>
+
+              {group.skills.length > 0 && (
+                <ul>
+                  {group.skills.map((skill) => (
+                    <li key={skill}>{skill}</li>
+                  ))}
+                </ul>
+              )}
+            </section>
+          ))}
+        </div>
+      </Section>
       
       <Section
         title="Projects I've built, problems I've solved, and ideas I've brought to life."
