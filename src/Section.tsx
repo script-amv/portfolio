@@ -19,11 +19,11 @@ function Section({
     <section
       className={
         aside
-          ? "flex flex-col-reverse gap-8 sm:flex-row"
-          : "max-w-2xl"
+          ? "flex gap-16 max-md:flex-col-reverse"
+          : ""
       }
     >
-      <div className="max-w-2xl flex-1">
+      <div className="max-w-2xl">
         <Heading className="text-5xl/tight font-semibold">{title}</Heading>
         <p className="mt-4 text-lg text-zinc-600">{description}</p>
         {children}
