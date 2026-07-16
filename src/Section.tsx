@@ -17,11 +17,7 @@ function Section({
 }: SectionProps) {
   return (
     <section
-      className={
-        aside
-          ? "flex gap-16 max-md:flex-col-reverse"
-          : ""
-      }
+      className={aside ? "flex gap-16 max-md:flex-col-reverse" : undefined}
     >
       <div>
         <div className="max-w-2xl">
