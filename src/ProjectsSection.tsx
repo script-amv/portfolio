@@ -4,7 +4,6 @@ type ProjectData = {
   name: string;
   description: string;
   url: string;
-  urlLabel: string;
   mark: string;
   accentClass: string;
 };
@@ -14,7 +13,6 @@ const projects: ProjectData[] = [
     name: "Atlas",
     description: "A collaborative workspace for turning product plans into focused delivery.",
     url: "https://example.com",
-    urlLabel: "example.com",
     mark: "A",
     accentClass: "bg-violet-700",
   },
@@ -22,7 +20,6 @@ const projects: ProjectData[] = [
     name: "MotionKit",
     description: "A lightweight animation toolkit for polished, high-performance interfaces.",
     url: "https://example.com",
-    urlLabel: "example.com",
     mark: "M",
     accentClass: "bg-cyan-500",
   },
@@ -30,7 +27,6 @@ const projects: ProjectData[] = [
     name: "Signal",
     description: "A real-time dashboard for tracking activity across distributed systems.",
     url: "https://example.com",
-    urlLabel: "example.com",
     mark: "S",
     accentClass: "bg-rose-500",
   },
@@ -38,7 +34,6 @@ const projects: ProjectData[] = [
     name: "OrbitOS",
     description: "An internal operating system for managing complex team workflows.",
     url: "https://example.com",
-    urlLabel: "example.com",
     mark: "O",
     accentClass: "bg-slate-900",
   },
@@ -46,11 +41,14 @@ const projects: ProjectData[] = [
     name: "Launchpad",
     description: "A planning tool for preparing and coordinating product releases.",
     url: "https://example.com",
-    urlLabel: "example.com",
     mark: "L",
     accentClass: "bg-blue-500",
   },
 ];
+
+function getUrlLabel(url: string) {
+  return new URL(url).hostname.replace(/^www\./, "");
+}
 
 function LinkIcon() {
   return (
@@ -74,7 +72,6 @@ function ProjectCard({
   name,
   description,
   url,
-  urlLabel,
   mark,
   accentClass,
 }: ProjectData) {
@@ -93,7 +90,7 @@ function ProjectCard({
 
       <a className="flex items-center gap-2 pt-8 text-sm text-muted" href={url}>
         <LinkIcon />
-        {urlLabel}
+        {getUrlLabel(url)}
       </a>
     </article>
   );
