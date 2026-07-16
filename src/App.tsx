@@ -10,13 +10,19 @@ function App() {
         title="Hello, I'm Dmitrii — Web Developer."
         description="Based in Tokyo and available for new opportunities, I build thoughtful, reliable web applications across both frontend and backend. Explore my projects and experience, or get in touch to discuss an opportunity."
       >
-        <div className="mt-4 flex gap-6 opacity-60">
-          <a href="https://github.com/script-amv">
-            <img className="h-5 w-5" src={githubIcon} />
-          </a>
+        <div className="mt-4 opacity-60">
+          <div className="flex gap-6">
+            <a href="https://github.com/script-amv">
+              <img className="h-5 w-5" src={githubIcon} />
+            </a>
 
-          <a href="https://www.linkedin.com/in/script-amv">
-            <img className="h-5 w-5" src={linkedinIcon} />
+            <a href="https://www.linkedin.com/in/script-amv">
+              <img className="h-5 w-5" src={linkedinIcon} />
+            </a>
+          </div>
+
+          <a className="mt-4 block font-bold" href="mailto:dmitshostak@gmail.com">
+            dmitshostak@gmail.com
           </a>
         </div>
       </Section>
