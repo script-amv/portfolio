@@ -23,9 +23,11 @@ function Section({
           : ""
       }
     >
-      <div className="max-w-2xl">
-        <Heading className="text-5xl/tight font-semibold">{title}</Heading>
-        <p className="mt-4 text-lg text-zinc-600">{description}</p>
+      <div>
+        <div className="max-w-2xl">
+          <Heading className="text-5xl/tight font-semibold">{title}</Heading>
+          <p className="mt-4 text-lg text-zinc-600">{description}</p>
+        </div>
         {children}
       </div>
       {aside}
