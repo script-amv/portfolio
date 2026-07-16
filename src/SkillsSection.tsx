@@ -68,7 +68,7 @@ const skillGroups: SkillGroupData[] = [
 
 function SkillGroup({ title, description, skills }: SkillGroupData) {
   return (
-    <section className="grid content-start grid-cols-[8rem_minmax(0,1fr)] gap-2">
+    <section className="grid content-start grid-cols-[8rem_minmax(0,1fr)] gap-2 border-l border-line pl-8">
       <h3 className="font-semibold">{title}</h3>
       <p className="text-muted">{description}</p>
 
