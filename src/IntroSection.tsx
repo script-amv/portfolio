@@ -1,3 +1,5 @@
+import { Send } from "lucide-react";
+
 import Section from "./Section";
 import githubIcon from "./assets/icons/github.svg";
 import linkedinIcon from "./assets/icons/linkedin.png";
@@ -27,7 +29,8 @@ function IntroSection() {
           </a>
         </div>
 
-        <a className="mt-4 block font-bold" href="mailto:dmitshostak@gmail.com">
+        <a className="mt-4 flex items-center gap-2 font-bold" href="mailto:dmitshostak@gmail.com">
+          <Send className="size-4" />
           dmitshostak@gmail.com
         </a>
       </div>

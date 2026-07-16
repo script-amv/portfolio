@@ -1,3 +1,5 @@
+import { Link } from "lucide-react";
+
 import Section from "./Section";
 
 type ProjectData = {
@@ -50,24 +52,6 @@ function getUrlLabel(url: string) {
   return new URL(url).hostname.replace(/^www\./, "");
 }
 
-function LinkIcon() {
-  return (
-    <svg
-      aria-hidden="true"
-      className="size-4"
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="2"
-      viewBox="0 0 24 24"
-    >
-      <path d="M10 13a5 5 0 0 0 7.07.07l2-2a5 5 0 0 0-7.07-7.07l-1.15 1.15" />
-      <path d="M14 11a5 5 0 0 0-7.07-.07l-2 2A5 5 0 0 0 12 20l1.15-1.15" />
-    </svg>
-  );
-}
-
 function ProjectCard({
   name,
   description,
@@ -88,8 +72,8 @@ function ProjectCard({
       <h3 className="mt-8 text-lg font-semibold">{name}</h3>
       <p className="mt-4 text-muted">{description}</p>
 
-      <a className="flex items-center gap-2 pt-8 text-sm text-muted" href={url}>
-        <LinkIcon />
+      <a className="flex font-semibold items-center gap-2 pt-8 text-sm text-muted" href={url}>
+        <Link className="size-4" />
         {getUrlLabel(url)}
       </a>
     </article>
