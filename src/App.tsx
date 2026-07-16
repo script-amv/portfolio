@@ -12,7 +12,7 @@ function App() {
         description="Based in Tokyo and available for new opportunities, I build thoughtful, reliable web applications across both frontend and backend. Explore my projects and experience, or get in touch to discuss an opportunity."
         aside={
           <img
-            className="aspect-square w-full rotate-3 rounded-[2rem] object-cover"
+            className="aspect-square w-80 max-w-full shrink-0 rotate-3 rounded-3xl object-cover"
             src={portrait}
           />
         }
