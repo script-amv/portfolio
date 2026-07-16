@@ -21,7 +21,7 @@ const skillGroups = [
     ],
   },
   {
-    title: "Backend Engineering",
+    title: "Backend",
     description:
       "Reliable APIs and data-driven applications using:",
     skills: [
@@ -37,7 +37,7 @@ const skillGroups = [
     ],
   },
   {
-    title: "Design & Delivery",
+    title: "Design",
     description:
       "Product design, development workflows, deployment, and measurement with:",
     skills: [
@@ -51,7 +51,7 @@ const skillGroups = [
     ],
   },
   {
-    title: "Education & Credentials",
+    title: "Education",
     description:
       "My educational background and professional certifications:",
     skills: [
@@ -98,20 +98,20 @@ function App() {
         title="Technologies I use, tools I trust, and qualifications I've earned."
         description="I work across frontend and backend development to build fast, accessible, and reliable web experiences. Here's a focused overview of the technologies I reach for, the tools that support my workflow, and the qualifications that have shaped my professional development."
       >
-        <div className="mt-16 grid grid-cols-2 gap-8">
+        <div className="mt-16 grid grid-cols-2 gap-16">
           {skillGroups.map((group) => (
             <section
-              className="grid grid-cols-[8rem_minmax(0,1fr)] gap-4"
+              className="grid grid-cols-[8rem_minmax(0,1fr)] grid-rows-[auto_1fr_auto] gap-2"
               key={group.title}
             >
               <h3 className="font-semibold">{group.title}</h3>
               <p className="text-zinc-600">{group.description}</p>
 
               {group.skills.length > 0 && (
-                <ul className="col-start-2 flex flex-wrap gap-2">
+                <ul className="col-start-2 row-start-3 flex flex-wrap gap-2">
                   {group.skills.map((skill) => (
                     <li
-                      className="rounded-md border border-zinc-200 p-1 text-xs text-zinc-600"
+                      className="rounded-md border border-zinc-200 p-1 text-xs text-zinc-600 max-h-fit max-w-fit"
                     >
                       {skill}
                     </li>
