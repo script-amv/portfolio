@@ -7,7 +7,7 @@ const skillGroups = [
   {
     title: "Frontend",
     description:
-      "Accessible, responsive, and performance-focused interfaces built with:",
+      "Accessible, responsive interfaces built for speed and usability:",
     skills: [
       "React",
       "Next.js",
@@ -23,7 +23,7 @@ const skillGroups = [
   {
     title: "Backend",
     description:
-      "Reliable APIs and data-driven applications using:",
+      "Reliable APIs and data-driven systems built for scale and clarity:",
     skills: [
       "Node.js",
       "NestJS",
@@ -39,7 +39,7 @@ const skillGroups = [
   {
     title: "Design",
     description:
-      "Product design, development workflows, deployment, and measurement with:",
+      "Product design, delivery, and measurement for stronger outcomes:",
     skills: [
       "Figma",
       "Adobe Photoshop",
@@ -53,7 +53,7 @@ const skillGroups = [
   {
     title: "Education",
     description:
-      "My educational background and professional certifications:",
+      "Education and credentials supporting continued professional growth:",
     skills: [
       "BSc Computer Science — 2026",
       "JLPT N1",
