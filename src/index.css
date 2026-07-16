@@ -1,1 +1,14 @@
 @import "tailwindcss";
+
+@theme inline {
+  --color-ink: var(--color-zinc-950);
+  --color-muted: var(--color-zinc-600);
+  --color-line: var(--color-zinc-200);
+  --spacing-section: 40vh;
+}
+
+@layer base {
+  body {
+    color: var(--color-ink);
+  }
+}

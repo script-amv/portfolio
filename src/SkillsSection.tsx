@@ -70,12 +70,12 @@ function SkillGroup({ title, description, skills }: SkillGroupData) {
   return (
     <section className="grid content-start grid-cols-[8rem_minmax(0,1fr)] gap-2">
       <h3 className="font-semibold">{title}</h3>
-      <p className="text-zinc-600">{description}</p>
+      <p className="text-muted">{description}</p>
 
       <ul className="col-start-2 flex flex-wrap gap-2">
         {skills.map((skill) => (
           <li
-            className="rounded-md border border-zinc-200 p-1 text-xs text-zinc-600"
+            className="rounded-md border border-line p-1 text-xs text-muted"
             key={skill}
           >
             {skill}
