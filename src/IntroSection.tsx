@@ -1,5 +1,4 @@
 import { Send } from "lucide-react";
-import { Dot } from "lucide-react";
 
 import Section from "./Section";
 import githubIcon from "./assets/icons/github.svg";
@@ -19,8 +18,7 @@ function IntroSection() {
         />
       }
     >
-      <div className="mt-4 opacity-60">
-        <div className="flex gap-6">
+        <div className="flex gap-6 items-center mt-4 opacity-70">
           <a href="https://github.com/script-amv">
             <img className="h-5 w-5" src={githubIcon} />
           </a>
@@ -30,11 +28,10 @@ function IntroSection() {
           </a>
 
           <a className="flex items-center gap-2 font-semibold text-sm" href="mailto:dmitshostak@gmail.com">
-            <Send className="size-4" />
+            <Send className="size-5" />
             dmitshostak@gmail.com
           </a>
         </div>
-      </div>
     </Section>
   );
 }
