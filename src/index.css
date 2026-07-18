@@ -4,11 +4,17 @@
   --color-ink: var(--color-zinc-950);
   --color-muted: var(--color-zinc-600);
   --color-line: var(--color-zinc-200);
+  --color-accent: var(--color-slate-800);
+  --color-accent-line: var(--color-slate-400);
   --spacing-section: 40vh;
 }
 
 @layer base {
   body {
     color: var(--color-ink);
+  }
+
+  a {
+    @apply transition-colors hover:text-accent;
   }
 }

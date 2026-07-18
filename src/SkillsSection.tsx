@@ -68,14 +68,14 @@ const skillGroups: SkillGroupData[] = [
 
 function SkillGroup({ title, description, skills }: SkillGroupData) {
   return (
-    <section className="grid content-start grid-cols-[8rem_minmax(0,1fr)] gap-2 border-l border-line pl-8">
+    <section className="grid content-start grid-cols-[8rem_minmax(0,1fr)] gap-2 border-l border-line pl-8 transition-colors hover:border-accent-line">
       <h3 className="font-semibold">{title}</h3>
       <p className="text-muted">{description}</p>
 
       <ul className="col-start-2 flex flex-wrap gap-2">
         {skills.map((skill) => (
           <li
-            className="rounded-md border border-line p-1 text-xs text-muted"
+            className="rounded-md border border-line p-1 text-xs text-muted transition-colors hover:border-accent-line hover:text-accent"
             key={skill}
           >
             {skill}

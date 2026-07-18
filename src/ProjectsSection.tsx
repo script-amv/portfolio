@@ -72,7 +72,10 @@ function ProjectCard({
       <h3 className="mt-8 text-lg font-semibold">{name}</h3>
       <p className="mt-4 text-muted">{description}</p>
 
-      <a className="flex font-semibold items-center gap-2 pt-8 text-sm text-muted" href={url}>
+      <a
+        className="flex items-center gap-2 pt-8 text-sm font-semibold text-muted transition-colors hover:text-accent"
+        href={url}
+      >
         <Link className="size-4" />
         {getUrlLabel(url)}
       </a>
