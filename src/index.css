@@ -6,6 +6,7 @@
   --color-line: var(--color-zinc-200);
   --color-accent: var(--color-slate-800);
   --color-accent-line: var(--color-slate-400);
+  --color-surface-hover: var(--color-zinc-100);
   --spacing-section: 40vh;
 }
 

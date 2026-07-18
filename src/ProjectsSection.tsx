@@ -60,7 +60,7 @@ function ProjectCard({
   accentClass,
 }: ProjectData) {
   return (
-    <article className="flex flex-col">
+    <article className="flex flex-col rounded-xl p-4 transition-all hover:-translate-y-1 hover:bg-surface-hover">
       <div className="grid size-12 place-items-center rounded-full border border-line bg-white shadow-sm">
         <div
           className={`grid size-8 place-items-center rounded-full text-xs font-semibold text-white ${accentClass}`}
