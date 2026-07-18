@@ -2,7 +2,7 @@ import { Send } from "lucide-react";
 
 import Section from "./Section";
 import githubIcon from "./assets/icons/github.svg";
-import linkedinIcon from "./assets/icons/linkedin.png";
+import linkedinIcon from "./assets/icons/linkedin.svg";
 import portrait from "./assets/portrait.png";
 
 function IntroSection() {
@@ -18,17 +18,17 @@ function IntroSection() {
         />
       }
     >
-        <div className="flex gap-6 items-center mt-4 opacity-70">
+        <div className="flex gap-8 items-center mt-4 text-muted font-semibold text-sm">
           <a href="https://github.com/script-amv">
-            <img className="h-5 w-5" src={githubIcon} />
+            <img className="size-5" src={githubIcon} />
           </a>
 
           <a href="https://www.linkedin.com/in/script-amv">
-            <img className="h-5 w-5" src={linkedinIcon} />
+            <img className="size-5" src={linkedinIcon} />
           </a>
 
-          <a className="flex items-center gap-2 font-semibold text-sm" href="mailto:dmitshostak@gmail.com">
-            <Send className="size-5" />
+          <a className="flex items-center gap-2" href="mailto:dmitshostak@gmail.com">
+            <Send className="size-5"/>
             dmitshostak@gmail.com
           </a>
         </div>
