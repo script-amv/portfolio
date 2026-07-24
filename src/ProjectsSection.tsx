@@ -86,6 +86,7 @@ function ProjectCard({
 function ProjectsSection() {
   return (
     <Section
+      id="projects"
       title="Projects I've built, problems I've solved, and ideas I've brought to life."
       description="I approach each project with a focus on thoughtful decisions, reliable implementation, and a clear purpose. Here's a selection of work that shows how I turn ideas and requirements into polished web applications across the stack."
     >

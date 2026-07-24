@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 
 type SectionProps = {
+  id?: string;
   title: string;
   description: string;
   children?: ReactNode;
@@ -9,6 +10,7 @@ type SectionProps = {
 };
 
 function Section({
+  id,
   title,
   description,
   children,
@@ -17,7 +19,12 @@ function Section({
 }: SectionProps) {
   return (
     <section
-      className={aside ? "flex gap-16 max-md:flex-col-reverse" : undefined}
+      id={id}
+      className={
+        aside
+          ? "scroll-mt-24 flex gap-16 max-md:flex-col-reverse"
+          : "scroll-mt-24"
+      }
     >
       <div>
         <div className="max-w-2xl">

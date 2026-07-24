@@ -89,6 +89,7 @@ function SkillGroup({ title, description, skills }: SkillGroupData) {
 function SkillsSection() {
   return (
     <Section
+      id="skills"
       title="Technologies I use, tools I trust, and qualifications I've earned."
       description="I work across frontend and backend development to build fast, accessible, and reliable web experiences. Here's a focused overview of the technologies I reach for, the tools that support my workflow, and the qualifications that have shaped my professional development."
     >

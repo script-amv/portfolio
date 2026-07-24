@@ -39,6 +39,7 @@ function LinkedInIcon() {
 function IntroSection() {
   return (
     <Section
+      id="about"
       headingLevel="h1"
       title="Hello, I'm Dmitrii — Web Developer."
       description="Based in Tokyo and available for new opportunities, I build thoughtful, reliable web applications across both frontend and backend. Explore my projects and experience, or get in touch to discuss an opportunity."
@@ -46,6 +47,7 @@ function IntroSection() {
         <img
           className="flex-1 min-w-64 max-md:max-h-64 rotate-3 rounded-3xl object-cover shadow-xl"
           src={portrait}
+          alt="Dmitrii"
         />
       }
     >
