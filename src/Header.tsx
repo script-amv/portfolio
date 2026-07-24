@@ -1,8 +1,7 @@
 import { Mail, Moon, Sun } from "lucide-react";
 import { useState } from "react";
 
-import githubIcon from "./assets/icons/github.svg";
-import linkedinIcon from "./assets/icons/linkedin.svg";
+import { GitHubIcon, LinkedInIcon } from "./SocialIcons";
 
 const navigation = [
   { label: "About", href: "#about" },
@@ -34,14 +33,14 @@ function Header() {
             href="https://github.com/script-amv"
             aria-label="GitHub"
           >
-            <img className="size-4" src={githubIcon} alt="" />
+            <GitHubIcon className="size-4" />
           </a>
           <a
             className={controlClass}
             href="https://www.linkedin.com/in/script-amv"
             aria-label="LinkedIn"
           >
-            <img className="size-4" src={linkedinIcon} alt="" />
+            <LinkedInIcon className="size-4" />
           </a>
           <a
             className={controlClass}
