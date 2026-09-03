@@ -13,12 +13,22 @@ const controlClass =
   "grid size-8 shrink-0 place-items-center text-sm text-muted transition-colors hover:text-accent";
 
 function Header() {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(() =>
+    document.documentElement.classList.contains("dark"),
+  );
   const [isJapanese, setIsJapanese] = useState(false);
+
+  function toggleTheme() {
+    const nextTheme = !isDark;
+
+    document.documentElement.classList.toggle("dark", nextTheme);
+    setIsDark(nextTheme);
+    localStorage.setItem("theme", nextTheme ? "dark" : "light");
+  }
 
   return (
     <header className="fixed top-4 left-1/2 z-50 max-w-[calc(100vw-2rem)] -translate-x-1/2">
-      <div className="flex items-center overflow-x-auto rounded-full border border-line bg-white/90 p-1 shadow-sm backdrop-blur-md">
+      <div className="flex items-center overflow-x-auto rounded-full border border-line bg-canvas/90 p-1 shadow-sm backdrop-blur-md transition-colors">
         <nav className="flex" aria-label="Primary navigation">
           {navigation.map(({ label, href }) => (
             <a className="px-3 py-1 text-sm leading-6" href={href} key={href}>
@@ -55,8 +65,9 @@ function Header() {
           <button
             className={controlClass}
             type="button"
-            onClick={() => setIsDark(!isDark)}
-            aria-label="Preview theme switch"
+            onClick={toggleTheme}
+            aria-label={`Switch to ${isDark ? "light" : "dark"} theme`}
+            aria-pressed={isDark}
           >
             {isDark ? <Sun className="size-4" /> : <Moon className="size-4" />}
           </button>

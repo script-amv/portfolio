@@ -1,16 +1,42 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-ink: var(--color-zinc-950);
-  --color-muted: var(--color-zinc-600);
-  --color-line: var(--color-zinc-200);
-  --color-accent: var(--color-slate-800);
-  --color-accent-line: var(--color-slate-400);
-  --color-surface-hover: var(--color-zinc-100);
+  --color-page: var(--theme-page);
+  --color-canvas: var(--theme-canvas);
+  --color-ink: var(--theme-ink);
+  --color-muted: var(--theme-muted);
+  --color-line: var(--theme-line);
+  --color-accent: var(--theme-accent);
+  --color-accent-line: var(--theme-accent-line);
+  --color-surface-hover: var(--theme-surface-hover);
   --spacing-section: 40vh;
 }
 
 @layer base {
+  :root {
+    color-scheme: light;
+    --theme-page: var(--color-zinc-100);
+    --theme-canvas: var(--color-white);
+    --theme-ink: var(--color-zinc-950);
+    --theme-muted: var(--color-zinc-600);
+    --theme-line: var(--color-zinc-200);
+    --theme-accent: var(--color-slate-800);
+    --theme-accent-line: var(--color-slate-400);
+    --theme-surface-hover: var(--color-zinc-100);
+  }
+
+  :root.dark {
+    color-scheme: dark;
+    --theme-page: var(--color-zinc-950);
+    --theme-canvas: var(--color-zinc-900);
+    --theme-ink: var(--color-zinc-100);
+    --theme-muted: var(--color-zinc-400);
+    --theme-line: var(--color-zinc-800);
+    --theme-accent: var(--color-slate-200);
+    --theme-accent-line: var(--color-slate-600);
+    --theme-surface-hover: var(--color-zinc-800);
+  }
+
   @media (prefers-reduced-motion: no-preference) {
     html {
       scroll-behavior: smooth;
@@ -18,7 +44,11 @@
   }
 
   body {
+    background-color: var(--color-page);
     color: var(--color-ink);
+    transition:
+      color 150ms,
+      background-color 150ms;
   }
 
   a {
@@ -39,6 +69,12 @@
     position: relative;
     isolation: isolate;
     overflow: hidden;
+  }
+
+  .dark .portfolio-canvas {
+    --canvas-grid-color: rgb(255 255 255 / 4%);
+    --canvas-wash-left-color: rgb(255 255 255 / 8%);
+    --canvas-wash-right-color: rgb(255 255 255 / 8%);
   }
 
   .portfolio-canvas::before,

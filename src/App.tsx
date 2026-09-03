@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Header />
-      <main className="portfolio-canvas mx-auto flex max-w-7xl flex-col gap-section border-x border-line bg-white px-24 py-section">
+      <main className="portfolio-canvas mx-auto flex max-w-7xl flex-col gap-section border-x border-line bg-canvas px-24 py-section transition-colors">
         <IntroSection />
         <SkillsSection />
         <ProjectsSection />
