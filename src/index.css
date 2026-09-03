@@ -9,7 +9,7 @@
   --color-accent: var(--theme-accent);
   --color-accent-line: var(--theme-accent-line);
   --color-surface-hover: var(--theme-surface-hover);
-  --spacing-section: 40vh;
+  --spacing-section: clamp(8rem, 22vh, 20rem);
 }
 
 @layer base {
@@ -53,6 +53,11 @@
 
   a {
     @apply transition-colors hover:text-accent;
+  }
+
+  :where(a, button):focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
   }
 }
 

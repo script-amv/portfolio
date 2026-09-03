@@ -10,44 +10,6 @@ type ProjectData = {
   accentClass: string;
 };
 
-const projects: ProjectData[] = [
-  {
-    name: "Atlas",
-    description: "A collaborative workspace for turning product plans into focused delivery.",
-    url: "https://example.com",
-    mark: "A",
-    accentClass: "bg-violet-700",
-  },
-  {
-    name: "MotionKit",
-    description: "A lightweight animation toolkit for polished, high-performance interfaces.",
-    url: "https://example.com",
-    mark: "M",
-    accentClass: "bg-cyan-500",
-  },
-  {
-    name: "Signal",
-    description: "A real-time dashboard for tracking activity across distributed systems.",
-    url: "https://example.com",
-    mark: "S",
-    accentClass: "bg-rose-500",
-  },
-  {
-    name: "OrbitOS",
-    description: "An internal operating system for managing complex team workflows.",
-    url: "https://example.com",
-    mark: "O",
-    accentClass: "bg-slate-900",
-  },
-  {
-    name: "Launchpad",
-    description: "A planning tool for preparing and coordinating product releases.",
-    url: "https://example.com",
-    mark: "L",
-    accentClass: "bg-blue-500",
-  },
-];
-
 function getUrlLabel(url: string) {
   return new URL(url).hostname.replace(/^www\./, "");
 }
@@ -60,7 +22,7 @@ function ProjectCard({
   accentClass,
 }: ProjectData) {
   return (
-    <article className="flex flex-col rounded-xl p-4 transition-all hover:-translate-y-1 hover:bg-surface-hover">
+    <article className="flex min-w-0 flex-col rounded-xl p-4 transition-all hover:-translate-y-1 hover:bg-surface-hover">
       <div className="grid size-12 place-items-center rounded-full border border-line bg-canvas shadow-sm">
         <div
           className={`grid size-8 place-items-center rounded-full text-xs font-semibold text-white ${accentClass}`}
@@ -83,15 +45,19 @@ function ProjectCard({
   );
 }
 
-function ProjectsSection() {
+type ProjectsSectionProps = {
+  content: { title: string; description: string; items: ProjectData[] };
+};
+
+function ProjectsSection({ content }: ProjectsSectionProps) {
   return (
     <Section
       id="projects"
-      title="Projects I've built, problems I've solved, and ideas I've brought to life."
-      description="I approach each project with a focus on thoughtful decisions, reliable implementation, and a clear purpose. Here's a selection of work that shows how I turn ideas and requirements into polished web applications across the stack."
+      title={content.title}
+      description={content.description}
     >
-      <div className="mt-16 grid grid-cols-3 gap-16">
-        {projects.map((project) => (
+      <div className="mt-10 grid gap-6 sm:mt-12 sm:grid-cols-2 sm:gap-8 lg:mt-16 lg:grid-cols-3 lg:gap-12 xl:gap-16">
+        {content.items.map((project) => (
           <ProjectCard {...project} key={project.name} />
         ))}
       </div>

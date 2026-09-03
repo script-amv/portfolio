@@ -4,32 +4,36 @@ import Section from "./Section";
 import { GitHubIcon, LinkedInIcon } from "./SocialIcons";
 import portrait from "./assets/portrait.png";
 
-function IntroSection() {
+type IntroSectionProps = {
+  content: { title: string; description: string; portraitAlt: string };
+};
+
+function IntroSection({ content }: IntroSectionProps) {
   return (
     <Section
       id="about"
       headingLevel="h1"
-      title="Hello, I'm Dmitrii — Web Developer."
-      description="Based in Tokyo and available for new opportunities, I build thoughtful, reliable web applications across both frontend and backend. Explore my projects and experience, or get in touch to discuss an opportunity."
+      title={content.title}
+      description={content.description}
       aside={
         <img
-          className="flex-1 min-w-64 max-md:max-h-64 rotate-3 rounded-3xl object-cover shadow-xl"
+          className="mx-auto w-full max-w-xs rotate-3 rounded-3xl object-cover shadow-xl md:max-w-none"
           src={portrait}
-          alt="Dmitrii"
+          alt={content.portraitAlt}
         />
       }
     >
-      <div className="mt-4 flex items-center gap-8 text-sm font-semibold text-muted">
-        <a href="https://github.com/script-amv" aria-label="GitHub">
+      <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-semibold text-muted sm:gap-x-8">
+        <a className="grid size-10 place-items-center" href="https://github.com/script-amv" aria-label="GitHub">
           <GitHubIcon />
         </a>
 
-        <a href="https://www.linkedin.com/in/script-amv" aria-label="LinkedIn">
+        <a className="grid size-10 place-items-center" href="https://www.linkedin.com/in/script-amv" aria-label="LinkedIn">
           <LinkedInIcon />
         </a>
 
         <a
-          className="flex items-center gap-2"
+          className="flex min-h-10 min-w-0 items-center gap-2 break-all"
           href="mailto:dmitshostak@gmail.com"
         >
           <Send className="size-5" />

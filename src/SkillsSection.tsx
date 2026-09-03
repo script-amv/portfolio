@@ -6,73 +6,13 @@ type SkillGroupData = {
   skills: string[];
 };
 
-const skillGroups: SkillGroupData[] = [
-  {
-    title: "Frontend",
-    description:
-      "Accessible, responsive interfaces built for speed and usability:",
-    skills: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "TanStack Query",
-      "Zustand",
-      "Vite",
-      "Vitest",
-      "Playwright",
-    ],
-  },
-  {
-    title: "Backend",
-    description:
-      "Reliable APIs and data-driven systems built for scale and clarity:",
-    skills: [
-      "Node.js",
-      "NestJS",
-      "Express",
-      "PostgreSQL",
-      "Prisma",
-      "Redis",
-      "REST",
-      "GraphQL",
-      "Docker",
-    ],
-  },
-  {
-    title: "Design",
-    description:
-      "Product design, delivery, and measurement for stronger outcomes:",
-    skills: [
-      "Figma",
-      "Adobe Photoshop",
-      "GitHub",
-      "CI/CD",
-      "Vercel",
-      "Postman",
-      "Google Analytics",
-    ],
-  },
-  {
-    title: "Education",
-    description:
-      "Education and credentials supporting continued professional growth:",
-    skills: [
-      "BSc Computer Science — 2026",
-      "JLPT N1",
-      "EIKEN Grade 1",
-      "Google Advanced Data Analytics Professional Certificate",
-    ],
-  },
-];
-
 function SkillGroup({ title, description, skills }: SkillGroupData) {
   return (
-    <section className="grid content-start grid-cols-[8rem_minmax(0,1fr)] gap-2 border-l border-line pl-8 transition-colors hover:border-accent-line">
+    <section className="grid content-start gap-2 border-l border-line pl-4 transition-colors hover:border-accent-line sm:grid-cols-[8rem_minmax(0,1fr)] sm:pl-6 lg:pl-8">
       <h3 className="font-semibold">{title}</h3>
       <p className="text-muted">{description}</p>
 
-      <ul className="col-start-2 flex flex-wrap gap-2">
+      <ul className="flex flex-wrap gap-2 sm:col-start-2">
         {skills.map((skill) => (
           <li
             className="rounded-md border border-line p-1 text-xs text-muted transition-colors hover:border-accent-line hover:text-accent"
@@ -86,15 +26,19 @@ function SkillGroup({ title, description, skills }: SkillGroupData) {
   );
 }
 
-function SkillsSection() {
+type SkillsSectionProps = {
+  content: { title: string; description: string; groups: SkillGroupData[] };
+};
+
+function SkillsSection({ content }: SkillsSectionProps) {
   return (
     <Section
       id="skills"
-      title="Technologies I use, tools I trust, and qualifications I've earned."
-      description="I work across frontend and backend development to build fast, accessible, and reliable web experiences. Here's a focused overview of the technologies I reach for, the tools that support my workflow, and the qualifications that have shaped my professional development."
+      title={content.title}
+      description={content.description}
     >
-      <div className="mt-16 grid grid-cols-2 gap-16">
-        {skillGroups.map((group) => (
+      <div className="mt-10 grid gap-10 sm:mt-12 sm:grid-cols-2 sm:gap-12 lg:mt-16 lg:gap-16">
+        {content.groups.map((group) => (
           <SkillGroup {...group} key={group.title} />
         ))}
       </div>

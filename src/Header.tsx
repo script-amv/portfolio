@@ -1,22 +1,22 @@
 import { Mail, Moon, Sun } from "lucide-react";
 import { useState } from "react";
 
+import type { Content, Language } from "./content";
 import { GitHubIcon, LinkedInIcon } from "./SocialIcons";
 
-const navigation = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-];
-
 const controlClass =
-  "grid size-8 shrink-0 place-items-center text-sm text-muted transition-colors hover:text-accent";
+  "grid size-10 shrink-0 place-items-center rounded-full text-sm text-muted transition-colors hover:text-accent";
 
-function Header() {
+type HeaderProps = {
+  content: Pick<Content, "navigation" | "controls">;
+  language: Language;
+  onLanguageChange: () => void;
+};
+
+function Header({ content, language, onLanguageChange }: HeaderProps) {
   const [isDark, setIsDark] = useState(() =>
     document.documentElement.classList.contains("dark"),
   );
-  const [isJapanese, setIsJapanese] = useState(false);
 
   function toggleTheme() {
     const nextTheme = !isDark;
@@ -27,17 +27,17 @@ function Header() {
   }
 
   return (
-    <header className="fixed top-4 left-1/2 z-50 max-w-[calc(100vw-2rem)] -translate-x-1/2">
-      <div className="flex items-center overflow-x-auto rounded-full border border-line bg-canvas/90 p-1 shadow-sm backdrop-blur-md transition-colors">
-        <nav className="flex" aria-label="Primary navigation">
-          {navigation.map(({ label, href }) => (
-            <a className="px-3 py-1 text-sm leading-6" href={href} key={href}>
+    <header className="fixed top-3 left-1/2 z-50 w-max max-w-[calc(100vw-1rem)] -translate-x-1/2 sm:top-4 sm:max-w-[calc(100vw-2rem)]">
+      <div className="flex items-center rounded-full border border-line bg-canvas/90 p-1 shadow-sm backdrop-blur-md transition-colors">
+        <nav className="flex min-w-0" aria-label="Primary navigation">
+          {content.navigation.map(({ label, href }) => (
+            <a className="whitespace-nowrap px-2 py-2 text-xs leading-5 sm:px-3 sm:text-sm" href={href} key={href}>
               {label}
             </a>
           ))}
         </nav>
 
-        <div className="ml-1 flex border-l border-line pl-1">
+        <div className="ml-1 hidden border-l border-line pl-1 min-[421px]:flex">
           <a
             className={controlClass}
             href="https://github.com/script-amv"
@@ -66,7 +66,7 @@ function Header() {
             className={controlClass}
             type="button"
             onClick={toggleTheme}
-            aria-label={`Switch to ${isDark ? "light" : "dark"} theme`}
+            aria-label={isDark ? content.controls.switchToLight : content.controls.switchToDark}
             aria-pressed={isDark}
           >
             {isDark ? <Sun className="size-4" /> : <Moon className="size-4" />}
@@ -74,10 +74,10 @@ function Header() {
           <button
             className={controlClass}
             type="button"
-            onClick={() => setIsJapanese(!isJapanese)}
-            aria-label="Preview language switch"
+            onClick={onLanguageChange}
+            aria-label={language === "ja" ? content.controls.switchToEnglish : content.controls.switchToJapanese}
           >
-            {isJapanese ? "EN" : "JA"}
+            {language === "ja" ? "EN" : "JA"}
           </button>
         </div>
       </div>
