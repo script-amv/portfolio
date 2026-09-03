@@ -7,6 +7,7 @@ type SectionProps = {
   children?: ReactNode;
   aside?: ReactNode;
   headingLevel?: "h1" | "h2";
+  fillViewport?: boolean;
 };
 
 function Section({
@@ -16,15 +17,16 @@ function Section({
   children,
   aside,
   headingLevel: Heading = "h2",
+  fillViewport = false,
 }: SectionProps) {
+  const layoutClass = aside
+    ? "scroll-mt-28 grid content-start items-start gap-3 sm:gap-6 md:grid-cols-[minmax(0,1fr)_minmax(12rem,20rem)] md:content-center md:items-center md:gap-12 lg:gap-16"
+    : "scroll-mt-24";
+
   return (
     <section
       id={id}
-      className={
-        aside
-          ? "scroll-mt-28 grid items-center gap-6 md:grid-cols-[minmax(0,1fr)_minmax(12rem,20rem)] md:gap-12 lg:gap-16"
-          : "scroll-mt-24"
-      }
+      className={`${layoutClass} ${fillViewport ? "min-h-[calc(100svh-12rem)]" : ""}`}
     >
       <div className="min-w-0">
         <div className="max-w-2xl">

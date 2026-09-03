@@ -13,6 +13,7 @@ function IntroSection({ content }: IntroSectionProps) {
     <Section
       id="about"
       headingLevel="h1"
+      fillViewport
       title={content.title}
       description={content.description}
       aside={

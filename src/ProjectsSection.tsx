@@ -22,7 +22,7 @@ function ProjectCard({
   accentClass,
 }: ProjectData) {
   return (
-    <article className="flex min-w-0 flex-col rounded-xl p-4 transition-all hover:-translate-y-1 hover:bg-surface-hover">
+    <article className="flex min-w-0 flex-col rounded-xl p-4 transition-all hover:-translate-y-1 hover:bg-black/2">
       <div className="grid size-12 place-items-center rounded-full border border-line bg-canvas shadow-sm">
         <div
           className={`grid size-8 place-items-center rounded-full text-xs font-semibold text-white ${accentClass}`}

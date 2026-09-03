@@ -1,5 +1,5 @@
 import { Mail, Moon, Sun } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import type { Content, Language } from "./content";
 import { GitHubIcon, LinkedInIcon } from "./SocialIcons";
@@ -17,6 +17,28 @@ function Header({ content, language, onLanguageChange }: HeaderProps) {
   const [isDark, setIsDark] = useState(() =>
     document.documentElement.classList.contains("dark"),
   );
+  const [isHidden, setIsHidden] = useState(false);
+
+  useEffect(() => {
+    let previousScrollY = window.scrollY;
+
+    function updateHeaderVisibility() {
+      const currentScrollY = window.scrollY;
+      const scrollDifference = currentScrollY - previousScrollY;
+
+      if (currentScrollY < 24) {
+        setIsHidden(false);
+      } else if (Math.abs(scrollDifference) > 8) {
+        setIsHidden(scrollDifference > 0);
+      }
+
+      previousScrollY = currentScrollY;
+    }
+
+    window.addEventListener("scroll", updateHeaderVisibility, { passive: true });
+
+    return () => window.removeEventListener("scroll", updateHeaderVisibility);
+  }, []);
 
   function toggleTheme() {
     const nextTheme = !isDark;
@@ -27,7 +49,13 @@ function Header({ content, language, onLanguageChange }: HeaderProps) {
   }
 
   return (
-    <header className="fixed top-3 left-1/2 z-50 w-max max-w-[calc(100vw-1rem)] -translate-x-1/2 sm:top-4 sm:max-w-[calc(100vw-2rem)]">
+    <header
+      className={`fixed top-3 left-1/2 z-50 w-max max-w-[calc(100vw-1rem)] -translate-x-1/2 transition-transform duration-300 ease-in-out motion-reduce:transition-none sm:top-4 sm:max-w-[calc(100vw-2rem)] ${
+        isHidden
+          ? "pointer-events-none -translate-y-20"
+          : "translate-y-0"
+      }`}
+    >
       <div className="flex max-w-full items-center overflow-hidden rounded-full border border-line bg-canvas/90 p-1 shadow-sm backdrop-blur-md transition-colors">
         <nav className="flex min-w-0 flex-1 overflow-x-auto" aria-label="Primary navigation">
           {content.navigation.map(({ label, href }) => (
