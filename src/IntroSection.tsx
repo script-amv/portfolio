@@ -17,7 +17,7 @@ function IntroSection({ content }: IntroSectionProps) {
       description={content.description}
       aside={
         <img
-          className="mx-auto w-full max-w-xs rotate-3 rounded-3xl object-cover shadow-xl md:max-w-none"
+          className="order-first mx-0 size-28 shrink-0 rotate-3 rounded-2xl object-cover shadow-xl sm:size-64 md:order-none md:mx-auto md:rounded-3xl"
           src={portrait}
           alt={content.portraitAlt}
         />

@@ -22,7 +22,7 @@ function Section({
       id={id}
       className={
         aside
-          ? "scroll-mt-28 grid items-center gap-8 md:grid-cols-[minmax(0,1fr)_minmax(12rem,20rem)] md:gap-12 lg:gap-16"
+          ? "scroll-mt-28 grid items-center gap-6 md:grid-cols-[minmax(0,1fr)_minmax(12rem,20rem)] md:gap-12 lg:gap-16"
           : "scroll-mt-24"
       }
     >

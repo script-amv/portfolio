@@ -28,10 +28,14 @@ function Header({ content, language, onLanguageChange }: HeaderProps) {
 
   return (
     <header className="fixed top-3 left-1/2 z-50 w-max max-w-[calc(100vw-1rem)] -translate-x-1/2 sm:top-4 sm:max-w-[calc(100vw-2rem)]">
-      <div className="flex items-center rounded-full border border-line bg-canvas/90 p-1 shadow-sm backdrop-blur-md transition-colors">
-        <nav className="flex min-w-0" aria-label="Primary navigation">
+      <div className="flex max-w-full items-center overflow-hidden rounded-full border border-line bg-canvas/90 p-1 shadow-sm backdrop-blur-md transition-colors">
+        <nav className="flex min-w-0 flex-1 overflow-x-auto" aria-label="Primary navigation">
           {content.navigation.map(({ label, href }) => (
-            <a className="whitespace-nowrap px-2 py-2 text-xs leading-5 sm:px-3 sm:text-sm" href={href} key={href}>
+            <a
+              className="shrink-0 whitespace-nowrap px-2 py-2 text-xs leading-5 sm:px-3 sm:text-sm"
+              href={href}
+              key={href}
+            >
               {label}
             </a>
           ))}
@@ -66,7 +70,11 @@ function Header({ content, language, onLanguageChange }: HeaderProps) {
             className={controlClass}
             type="button"
             onClick={toggleTheme}
-            aria-label={isDark ? content.controls.switchToLight : content.controls.switchToDark}
+            aria-label={
+              isDark
+                ? content.controls.switchToLight
+                : content.controls.switchToDark
+            }
             aria-pressed={isDark}
           >
             {isDark ? <Sun className="size-4" /> : <Moon className="size-4" />}
@@ -75,7 +83,11 @@ function Header({ content, language, onLanguageChange }: HeaderProps) {
             className={controlClass}
             type="button"
             onClick={onLanguageChange}
-            aria-label={language === "ja" ? content.controls.switchToEnglish : content.controls.switchToJapanese}
+            aria-label={
+              language === "ja"
+                ? content.controls.switchToEnglish
+                : content.controls.switchToJapanese
+            }
           >
             {language === "ja" ? "EN" : "JA"}
           </button>
