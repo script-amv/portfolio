@@ -25,7 +25,7 @@ function App() {
         language={language}
         onLanguageChange={() => setLanguage(language === "en" ? "ja" : "en")}
       />
-      <main className="portfolio-canvas mx-auto flex min-h-screen w-full max-w-7xl flex-col gap-section border-x border-line bg-canvas px-4 py-32 pb-0 sm:px-8 md:px-12 lg:px-16 xl:px-24 xl:py-section xl:pb-0 transition-colors">
+      <main className="portfolio-canvas mx-auto flex min-h-screen w-full max-w-7xl flex-col gap-section border-x border-line bg-canvas px-4 py-32 pb-0 transition-colors sm:px-8 md:px-12 lg:px-16 xl:px-24 xl:py-section xl:pb-0">
         <IntroSection content={content[language].intro} />
         <SkillsSection content={content[language].skills} />
         <ProjectsSection content={content[language].projects} />

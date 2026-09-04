@@ -24,17 +24,17 @@ function IntroSection({ content }: IntroSectionProps) {
         />
       }
     >
-      <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-semibold text-muted sm:gap-x-8">
-        <a className="grid size-10 place-items-center" href="https://github.com/script-amv" aria-label="GitHub">
+      <div className="mt-8 flex flex-wrap items-center gap-3 text-sm font-semibold text-muted">
+        <a className="icon-link" href="https://github.com/script-amv" aria-label="GitHub" target="_blank" rel="noreferrer">
           <GitHubIcon />
         </a>
 
-        <a className="grid size-10 place-items-center" href="https://www.linkedin.com/in/script-amv" aria-label="LinkedIn">
+        <a className="icon-link" href="https://www.linkedin.com/in/script-amv" aria-label="LinkedIn" target="_blank" rel="noreferrer">
           <LinkedInIcon />
         </a>
 
         <a
-          className="flex min-h-10 min-w-0 items-center gap-2 break-all"
+          className="flex min-h-10 min-w-0 items-center gap-2 rounded-full border border-line px-4 hover:border-accent-line hover:bg-surface-hover"
           href="mailto:dmitshostak@gmail.com"
         >
           <Send className="size-5" />

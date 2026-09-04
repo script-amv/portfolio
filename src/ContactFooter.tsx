@@ -52,16 +52,20 @@ function ContactFooter({ content }: ContactFooterProps) {
           <div className="flex items-center justify-center gap-4">
             <span className="sr-only">{content.profilesLabel}</span>
             <a
-              className="grid size-10 place-items-center rounded-full border border-line hover:border-accent-line"
+              className="icon-link"
               href="https://github.com/script-amv"
               aria-label="GitHub"
+              target="_blank"
+              rel="noreferrer"
             >
               <GitHubIcon className="size-4" />
             </a>
             <a
-              className="grid size-10 place-items-center rounded-full border border-line hover:border-accent-line"
+              className="icon-link"
               href="https://www.linkedin.com/in/script-amv"
               aria-label="LinkedIn"
+              target="_blank"
+              rel="noreferrer"
             >
               <LinkedInIcon className="size-4" />
             </a>

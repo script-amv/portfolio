@@ -15,7 +15,7 @@ function SkillGroup({ title, description, skills }: SkillGroupData) {
       <ul className="flex flex-wrap gap-2 sm:col-start-2">
         {skills.map((skill) => (
           <li
-            className="rounded-md border border-line p-1 text-xs text-muted transition-colors hover:border-accent-line hover:text-accent"
+            className="rounded-md border border-line px-2 py-1 text-xs text-muted transition-colors hover:border-accent-line hover:bg-surface-hover hover:text-accent"
             key={skill}
           >
             {skill}

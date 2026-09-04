@@ -5,7 +5,7 @@ import type { Content, Language } from "./content";
 import { GitHubIcon, LinkedInIcon } from "./SocialIcons";
 
 const controlClass =
-  "grid size-10 shrink-0 place-items-center rounded-full text-sm text-muted transition-colors hover:text-accent";
+  "grid size-10 shrink-0 place-items-center rounded-full text-sm text-muted hover:bg-surface-hover hover:text-accent";
 
 type HeaderProps = {
   content: Pick<Content, "navigation" | "controls">;
@@ -60,7 +60,7 @@ function Header({ content, language, onLanguageChange }: HeaderProps) {
         <nav className="flex min-w-0 flex-1 overflow-x-auto" aria-label="Primary navigation">
           {content.navigation.map(({ label, href }) => (
             <a
-              className="shrink-0 whitespace-nowrap px-2 py-2 text-xs leading-5 sm:px-3 sm:text-sm"
+              className="shrink-0 rounded-full px-2 py-2 text-xs leading-5 hover:bg-surface-hover sm:px-3 sm:text-sm"
               href={href}
               key={href}
             >
@@ -74,6 +74,8 @@ function Header({ content, language, onLanguageChange }: HeaderProps) {
             className={controlClass}
             href="https://github.com/script-amv"
             aria-label="GitHub"
+            target="_blank"
+            rel="noreferrer"
           >
             <GitHubIcon className="size-4" />
           </a>
@@ -81,6 +83,8 @@ function Header({ content, language, onLanguageChange }: HeaderProps) {
             className={controlClass}
             href="https://www.linkedin.com/in/script-amv"
             aria-label="LinkedIn"
+            target="_blank"
+            rel="noreferrer"
           >
             <LinkedInIcon className="size-4" />
           </a>
