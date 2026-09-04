@@ -19,7 +19,7 @@ function ContactFooter({ content }: ContactFooterProps) {
       id="contact"
       className="mt-section scroll-mt-24 -mx-4 sm:-mx-8 md:-mx-12 lg:-mx-16 xl:-mx-24"
     >
-      <div className="border-t border-line px-4 pt-10 pb-4 sm:px-8 sm:pt-12 sm:pb-8 md:px-12 md:pb-12 lg:px-16 lg:pt-16 lg:pb-16 xl:px-24 xl:pb-24">
+      <div className="border-t border-line px-4 pt-10 pb-4 sm:px-8 sm:pt-12 sm:pb-4 md:px-12 md:pb-8 lg:px-16 lg:pt-16 lg:pb-12 xl:px-24 xl:pb-16">
         <div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_auto] md:items-end md:gap-16">
           <div className="max-w-2xl">
             <p className="text-sm font-semibold text-muted">{content.availability}</p>
