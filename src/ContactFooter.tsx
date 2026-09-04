@@ -17,9 +17,9 @@ function ContactFooter({ content }: ContactFooterProps) {
   return (
     <footer
       id="contact"
-      className="scroll-mt-24 -mx-4 sm:-mx-8 md:-mx-12 lg:-mx-16 xl:-mx-24"
+      className="mt-section scroll-mt-24 -mx-4 sm:-mx-8 md:-mx-12 lg:-mx-16 xl:-mx-24"
     >
-      <div className="border-t border-line px-4 pt-10 sm:px-8 sm:pt-12 md:px-12 lg:px-16 lg:pt-16 xl:px-24">
+      <div className="border-t border-line px-4 pt-10 pb-4 sm:px-8 sm:pt-12 sm:pb-8 md:px-12 md:pb-12 lg:px-16 lg:pt-16 lg:pb-16 xl:px-24 xl:pb-24">
         <div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_auto] md:items-end md:gap-16">
           <div className="max-w-2xl">
             <p className="text-sm font-semibold text-muted">{content.availability}</p>
@@ -47,7 +47,7 @@ function ContactFooter({ content }: ContactFooterProps) {
           </a>
         </div>
 
-        <div className="mt-12 grid gap-6 text-sm text-muted sm:mt-16 sm:grid-cols-[1fr_auto_1fr] sm:items-center">
+        <div className="mt-12 flex flex-wrap items-center justify-between gap-6 text-sm text-muted sm:mt-16">
           <p>{content.copyright}</p>
           <div className="flex items-center justify-center gap-4">
             <span className="sr-only">{content.profilesLabel}</span>
