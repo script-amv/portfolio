@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import Header from "./Header";
+import ExperienceSection from "./ExperienceSection";
 import IntroSection from "./IntroSection";
 import ProjectsSection from "./ProjectsSection";
 import SkillsSection from "./SkillsSection";
@@ -26,6 +27,7 @@ function App() {
       <main className="portfolio-canvas mx-auto flex min-h-screen w-full max-w-7xl flex-col gap-section border-x border-line bg-canvas px-4 py-32 sm:px-8 md:px-12 lg:px-16 xl:px-24 xl:py-section transition-colors">
         <IntroSection content={content[language].intro} />
         <SkillsSection content={content[language].skills} />
+        <ExperienceSection content={content[language].experience} />
         <ProjectsSection content={content[language].projects} />
       </main>
     </>
