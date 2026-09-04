@@ -37,6 +37,44 @@
     --theme-surface-hover: var(--color-zinc-800);
   }
 
+  /*
+   * A fixed canvas continues behind the document during elastic scrolling.
+   * Its width mirrors the main content area, preserving the grey page gutters.
+   */
+  html {
+    background-color: var(--theme-page);
+  }
+
+  #root {
+    position: relative;
+  }
+
+  #root::before {
+    position: fixed;
+    z-index: 0;
+    inset: 0;
+    width: min(100%, 80rem);
+    margin-inline: auto;
+    pointer-events: none;
+    content: "";
+    background-color: var(--theme-canvas);
+    background-image:
+      linear-gradient(rgb(0 0 0 / 3%) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(0 0 0 / 3%) 1px, transparent 1px);
+    background-size: 1.875rem 1.875rem;
+  }
+
+  :root.dark #root::before {
+    background-image:
+      linear-gradient(rgb(255 255 255 / 4%) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(255 255 255 / 4%) 1px, transparent 1px);
+  }
+
+  #root > * {
+    position: relative;
+    z-index: 1;
+  }
+
   @media (prefers-reduced-motion: no-preference) {
     html {
       scroll-behavior: smooth;
