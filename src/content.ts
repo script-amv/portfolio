@@ -34,7 +34,7 @@ export type Content = {
   skills: { title: string; description: string; groups: SkillGroup[] };
   experience: { title: string; description: string; items: Experience[] };
   projects: { title: string; description: string; items: Project[] };
-  contact: { title: string; description: string; availability: string; emailLabel: string; profilesLabel: string; copyright: string };
+  contact: { title: string; description: string; availability: string; email: string; profilesLabel: string; copyright: string };
 };
 
 const projects: Omit<Project, "description">[] = [
@@ -99,7 +99,7 @@ export const content: Record<Language, Content> = {
       title: "Let’s build something thoughtful.",
       description: "I’m open to web development opportunities and collaborations. If you have a project, role, or idea in mind, I’d love to hear from you.",
       availability: "Available for new opportunities",
-      emailLabel: "Email me",
+      email: "dmitshostak@gmail.com",
       profilesLabel: "Find me online",
       copyright: "© 2026 Dmitrii Shostak",
     },
@@ -157,7 +157,7 @@ export const content: Record<Language, Content> = {
       title: "一緒に、丁寧なものを作りましょう。",
       description: "Web 開発の仕事やコラボレーションの機会を探しています。プロジェクト、ポジション、またはアイデアについて、ぜひお気軽にご連絡ください。",
       availability: "新しい機会を探しています",
-      emailLabel: "メールを送る",
+      email: "dmitshostak@gmail.com",
       profilesLabel: "プロフィール",
       copyright: "© 2026 Dmitrii Shostak",
     },
