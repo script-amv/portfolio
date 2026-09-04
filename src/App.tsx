@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+import ContactFooter from "./ContactFooter";
 import Header from "./Header";
 import ExperienceSection from "./ExperienceSection";
 import IntroSection from "./IntroSection";
@@ -29,6 +30,7 @@ function App() {
         <SkillsSection content={content[language].skills} />
         <ProjectsSection content={content[language].projects} />
         <ExperienceSection content={content[language].experience} />
+        <ContactFooter content={content[language].contact} />
       </main>
     </>
   );

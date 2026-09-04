@@ -34,6 +34,7 @@ export type Content = {
   skills: { title: string; description: string; groups: SkillGroup[] };
   experience: { title: string; description: string; items: Experience[] };
   projects: { title: string; description: string; items: Project[] };
+  contact: { title: string; description: string; availability: string; emailLabel: string; profilesLabel: string; copyright: string };
 };
 
 const projects: Omit<Project, "description">[] = [
@@ -49,8 +50,9 @@ export const content: Record<Language, Content> = {
     navigation: [
       { label: "About", href: "#about" },
       { label: "Skills", href: "#skills" },
-      { label: "Experience", href: "#experience" },
       { label: "Projects", href: "#projects" },
+      { label: "Experience", href: "#experience" },
+      { label: "Contact", href: "#contact" },
     ],
     controls: { switchToLight: "Switch to light theme", switchToDark: "Switch to dark theme", switchToEnglish: "Switch language to English", switchToJapanese: "Switch language to Japanese" },
     intro: {
@@ -93,13 +95,22 @@ export const content: Record<Language, Content> = {
       description: "I approach each project with a focus on thoughtful decisions, reliable implementation, and a clear purpose. Here's a selection of work that shows how I turn ideas and requirements into polished web applications across the stack.",
       items: projects.map((project, index) => ({ ...project, description: ["A collaborative workspace for turning product plans into focused delivery.", "A lightweight animation toolkit for polished, high-performance interfaces.", "A real-time dashboard for tracking activity across distributed systems.", "An internal operating system for managing complex team workflows.", "A planning tool for preparing and coordinating product releases."][index] })),
     },
+    contact: {
+      title: "Let’s build something thoughtful.",
+      description: "I’m open to web development opportunities and collaborations. If you have a project, role, or idea in mind, I’d love to hear from you.",
+      availability: "Available for new opportunities",
+      emailLabel: "Email me",
+      profilesLabel: "Find me online",
+      copyright: "© 2026 Dmitrii Shostak",
+    },
   },
   ja: {
     navigation: [
       { label: "プロフィール", href: "#about" },
       { label: "スキル", href: "#skills" },
-      { label: "経験", href: "#experience" },
       { label: "プロジェクト", href: "#projects" },
+      { label: "経験", href: "#experience" },
+      { label: "お問い合わせ", href: "#contact" },
     ],
     controls: { switchToLight: "ライトテーマに切り替え", switchToDark: "ダークテーマに切り替え", switchToEnglish: "英語に切り替え", switchToJapanese: "日本語に切り替え" },
     intro: {
@@ -141,6 +152,14 @@ export const content: Record<Language, Content> = {
       title: "形にしてきたプロジェクト、解決した課題、実現してきたアイデア。",
       description: "それぞれのプロジェクトで、慎重な判断、信頼性の高い実装、明確な目的を大切にしています。アイデアや要件を、フルスタックで洗練された Web アプリケーションへと変える仕事の一部をご紹介します。",
       items: projects.map((project, index) => ({ ...project, description: ["プロダクト計画を、集中して実行できる形へ変えるコラボレーションワークスペース。", "洗練された高性能インターフェースのための、軽量なアニメーションツールキット。", "分散システム全体のアクティビティを追跡するリアルタイムダッシュボード。", "複雑なチームワークフローを管理するための、社内向けオペレーティングシステム。", "プロダクトリリースの準備と調整を支援する計画ツール。"][index] })),
+    },
+    contact: {
+      title: "一緒に、丁寧なものを作りましょう。",
+      description: "Web 開発の仕事やコラボレーションの機会を探しています。プロジェクト、ポジション、またはアイデアについて、ぜひお気軽にご連絡ください。",
+      availability: "新しい機会を探しています",
+      emailLabel: "メールを送る",
+      profilesLabel: "プロフィール",
+      copyright: "© 2026 Dmitrii Shostak",
     },
   },
 };
