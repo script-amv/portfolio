@@ -1,0 +1,13 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#18181B"/>
+  <circle cx="1035" cy="85" r="270" fill="#059669" fill-opacity="0.16"/>
+  <circle cx="1080" cy="595" r="340" fill="#7C3AED" fill-opacity="0.12"/>
+  <path d="M0 510C180 420 320 640 545 540C760 445 865 480 1200 360V630H0V510Z" fill="#27272A"/>
+  <rect x="86" y="78" width="112" height="112" rx="32" fill="#059669"/>
+  <path d="M119 106H149C171 106 185 120 185 134C185 148 171 162 149 162H119V106ZM141 124H137V144H141C154 144 162 141 162 134C162 127 154 124 141 124Z" fill="white"/>
+  <text x="86" y="302" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="700" letter-spacing="-2">Dmitrii Shostak</text>
+  <text x="86" y="370" fill="#D4D4D8" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="400">Web Developer based in Tokyo</text>
+  <rect x="86" y="456" width="420" height="2" fill="#10B981"/>
+  <text x="86" y="516" fill="#A1A1AA" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="500">Thoughtful, reliable web applications.</text>
+  <text x="86" y="571" fill="#A1A1AA" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="500">dmitriishostak.vercel.app</text>
+</svg>
