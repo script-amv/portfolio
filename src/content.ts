@@ -3,7 +3,8 @@ export type Language = "en" | "ja";
 type Project = {
   name: string;
   description: string;
-  url: string;
+  links?: { label: string; url: string }[];
+  status?: string;
   mark: string;
   accentClass: string;
 };
@@ -37,12 +38,20 @@ export type Content = {
   contact: { title: string; description: string; availability: string; email: string; profilesLabel: string; copyright: string };
 };
 
-const projects: Omit<Project, "description">[] = [
-  { name: "Atlas", url: "https://example.com", mark: "A", accentClass: "bg-violet-700" },
-  { name: "MotionKit", url: "https://example.com", mark: "M", accentClass: "bg-cyan-500" },
-  { name: "Signal", url: "https://example.com", mark: "S", accentClass: "bg-rose-500" },
-  { name: "OrbitOS", url: "https://example.com", mark: "O", accentClass: "bg-slate-900" },
-  { name: "Launchpad", url: "https://example.com", mark: "L", accentClass: "bg-blue-500" },
+const projects: Omit<Project, "description" | "status">[] = [
+  {
+    name: "LaunchLens",
+    links: [
+      { label: "Live site", url: "https://launchlens-zeta.vercel.app/" },
+      { label: "GitHub", url: "https://github.com/script-amv/launchlens" },
+    ],
+    mark: "L",
+    accentClass: "bg-emerald-600",
+  },
+  { name: "MotionKit", mark: "M", accentClass: "bg-cyan-500" },
+  { name: "Signal", mark: "S", accentClass: "bg-rose-500" },
+  { name: "OrbitOS", mark: "O", accentClass: "bg-slate-900" },
+  { name: "Launchpad", mark: "L", accentClass: "bg-blue-500" },
 ];
 
 export const content: Record<Language, Content> = {
@@ -93,7 +102,17 @@ export const content: Record<Language, Content> = {
     projects: {
       title: "Projects I've built, problems I've solved, and ideas I've brought to life.",
       description: "I approach each project with a focus on thoughtful decisions, reliable implementation, and a clear purpose. Here's a selection of work that shows how I turn ideas and requirements into polished web applications across the stack.",
-      items: projects.map((project, index) => ({ ...project, description: ["A collaborative workspace for turning product plans into focused delivery.", "A lightweight animation toolkit for polished, high-performance interfaces.", "A real-time dashboard for tracking activity across distributed systems.", "An internal operating system for managing complex team workflows.", "A planning tool for preparing and coordinating product releases."][index] })),
+      items: projects.map((project, index) => ({
+        ...project,
+        description: [
+          "A focused dashboard for discovering and tracking product launches.",
+          "A lightweight animation toolkit for polished, high-performance interfaces.",
+          "A real-time dashboard for tracking activity across distributed systems.",
+          "An internal operating system for managing complex team workflows.",
+          "A planning tool for preparing and coordinating product releases.",
+        ][index],
+        ...(index > 0 ? { status: "Currently under development" } : {}),
+      })),
     },
     contact: {
       title: "Let’s build something thoughtful.",
@@ -151,7 +170,17 @@ export const content: Record<Language, Content> = {
     projects: {
       title: "形にしてきたプロジェクト、解決した課題、実現してきたアイデア。",
       description: "それぞれのプロジェクトで、慎重な判断、信頼性の高い実装、明確な目的を大切にしています。アイデアや要件を、フルスタックで洗練された Web アプリケーションへと変える仕事の一部をご紹介します。",
-      items: projects.map((project, index) => ({ ...project, description: ["プロダクト計画を、集中して実行できる形へ変えるコラボレーションワークスペース。", "洗練された高性能インターフェースのための、軽量なアニメーションツールキット。", "分散システム全体のアクティビティを追跡するリアルタイムダッシュボード。", "複雑なチームワークフローを管理するための、社内向けオペレーティングシステム。", "プロダクトリリースの準備と調整を支援する計画ツール。"][index] })),
+      items: projects.map((project, index) => ({
+        ...project,
+        description: [
+          "プロダクトローンチを見つけて追跡するための、集中型ダッシュボード。",
+          "洗練された高性能インターフェースのための、軽量なアニメーションツールキット。",
+          "分散システム全体のアクティビティを追跡するリアルタイムダッシュボード。",
+          "複雑なチームワークフローを管理するための、社内向けオペレーティングシステム。",
+          "プロダクトリリースの準備と調整を支援する計画ツール。",
+        ][index],
+        ...(index > 0 ? { status: "現在開発中です" } : {}),
+      })),
     },
     contact: {
       title: "一緒に、丁寧なものを作りましょう。",

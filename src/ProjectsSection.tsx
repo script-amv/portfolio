@@ -5,19 +5,17 @@ import Section from "./Section";
 type ProjectData = {
   name: string;
   description: string;
-  url: string;
+  links?: { label: string; url: string }[];
+  status?: string;
   mark: string;
   accentClass: string;
 };
 
-function getUrlLabel(url: string) {
-  return new URL(url).hostname.replace(/^www\./, "");
-}
-
 function ProjectCard({
   name,
   description,
-  url,
+  links,
+  status,
   mark,
   accentClass,
 }: ProjectData) {
@@ -34,15 +32,24 @@ function ProjectCard({
       <h3 className="mt-8 text-lg font-semibold">{name}</h3>
       <p className="mt-4 text-muted">{description}</p>
 
-      <a
-        className="section-link pt-8"
-        href={url}
-        target="_blank"
-        rel="noreferrer"
-      >
-        <Link className="size-4" />
-        {getUrlLabel(url)}
-      </a>
+      {links ? (
+        <div className="flex flex-wrap gap-x-5 gap-y-3 pt-8">
+          {links.map((link) => (
+            <a
+              className="section-link"
+              href={link.url}
+              target="_blank"
+              rel="noreferrer"
+              key={link.url}
+            >
+              <Link className="size-4" />
+              {link.label}
+            </a>
+          ))}
+        </div>
+      ) : (
+        <p className="pt-8 text-sm font-medium text-muted">{status}</p>
+      )}
     </article>
   );
 }
