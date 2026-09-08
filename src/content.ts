@@ -48,7 +48,15 @@ const projects: Omit<Project, "description" | "status">[] = [
     mark: "L",
     accentClass: "bg-emerald-600",
   },
-  { name: "MotionKit", mark: "M", accentClass: "bg-cyan-500" },
+  {
+    name: "AnkiHub",
+    links: [
+      { label: "Live site", url: "https://ankihub.vercel.app" },
+      { label: "GitHub", url: "https://github.com/script-amv/ankihub" },
+    ],
+    mark: "A",
+    accentClass: "bg-zinc-800",
+  },
   { name: "Signal", mark: "S", accentClass: "bg-rose-500" },
   { name: "OrbitOS", mark: "O", accentClass: "bg-slate-900" },
   { name: "Launchpad", mark: "L", accentClass: "bg-blue-500" },
@@ -106,12 +114,12 @@ export const content: Record<Language, Content> = {
         ...project,
         description: [
           "A focused dashboard for discovering and tracking product launches.",
-          "A lightweight animation toolkit for polished, high-performance interfaces.",
+          "A calm dashboard for daily Anki practice, with live review statistics and a no-setup demo.",
           "A real-time dashboard for tracking activity across distributed systems.",
           "An internal operating system for managing complex team workflows.",
           "A planning tool for preparing and coordinating product releases.",
         ][index],
-        ...(index > 0 ? { status: "Currently under development" } : {}),
+        ...(!project.links ? { status: "Currently under development" } : {}),
       })),
     },
     contact: {
@@ -174,12 +182,12 @@ export const content: Record<Language, Content> = {
         ...project,
         description: [
           "プロダクトローンチを見つけて追跡するための、集中型ダッシュボード。",
-          "洗練された高性能インターフェースのための、軽量なアニメーションツールキット。",
+          "日々の Anki 学習に向けた、ライブ復習統計とすぐに試せるデモを備えた落ち着いたダッシュボード。",
           "分散システム全体のアクティビティを追跡するリアルタイムダッシュボード。",
           "複雑なチームワークフローを管理するための、社内向けオペレーティングシステム。",
           "プロダクトリリースの準備と調整を支援する計画ツール。",
         ][index],
-        ...(index > 0 ? { status: "現在開発中です" } : {}),
+        ...(!project.links ? { status: "現在開発中です" } : {}),
       })),
     },
     contact: {
